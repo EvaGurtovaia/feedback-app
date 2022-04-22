@@ -1,12 +1,14 @@
 import "./FeedbackItem.css";
+import Card from "./shared/Card";
+
 
 const FeedbackItem = ({ item }) => {
     return (
-        <div className="card">
+       <Card>
             <div className="num-display">{item.rating}</div>
             <div className="text-display"></div>
             {item.text}
-        </div>
+            </Card>
     );
 };
 
