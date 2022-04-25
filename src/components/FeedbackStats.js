@@ -1,3 +1,5 @@
+import "./FeedbackStats.css";
+
 const FeedbackStats = ({ feedback }) => {
     let aveRating =
         feedback.reduce((prevVal, curVal) => {
