@@ -5,8 +5,10 @@ const Header = ({ text }) => {
 
     return (
         <header className="header">
-            <div className="container"></div>
+            <div className="container">
             <h2>{text}</h2>
+            </div>
+            
         </header>
     );
 };
