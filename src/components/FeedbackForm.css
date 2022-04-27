@@ -4,4 +4,10 @@
     border: 1px solid #ccc;
     padding: 8px 10px;
     border-radius: 8px;
-  }
+}
+
+.message {
+    padding-top: 10px;
+    text-align: center;
+    color: rebeccapurple;
+}

@@ -5,10 +5,20 @@ import "./FeedbackForm.css";
 
 const FeedbackForm = () => {
     const [newFeedback, setNewFeedback] = useState("");
-    const [btnDisabled, setBtnDisabled] = useState("true");
+    const [btnDisabled, setBtnDisabled] = useState(true);
     const [message, setMessage] = useState("");
 
     const handleTextChange = (e) => {
+        if (newFeedback === "") {
+            setBtnDisabled(true);
+            setMessage(null);
+        } else if (newFeedback !== "" && newFeedback.trim().length <= 10) {
+            setBtnDisabled(true);
+            setMessage("Feedback must be at least 10 characters");
+        } else {
+            setBtnDisabled(false);
+            setMessage(null);
+        }
         setNewFeedback(e.target.value);
     };
 
@@ -23,8 +33,11 @@ const FeedbackForm = () => {
                         placeholder="Write a review"
                         value={newFeedback}
                     ></input>
-                    <Button type="submit">Send</Button>
+                    <Button type="submit" isDisabled={btnDisabled}>
+                        Send
+                    </Button>
                 </div>
+                {message && <div className="message">{message}</div>}
             </form>
         </Card>
     );
