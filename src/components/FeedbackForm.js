@@ -5,6 +5,8 @@ import "./FeedbackForm.css";
 
 const FeedbackForm = () => {
     const [newFeedback, setNewFeedback] = useState("");
+    const [btnDisabled, setBtnDisabled] = useState("true");
+    const [message, setMessage] = useState("");
 
     const handleTextChange = (e) => {
         setNewFeedback(e.target.value);
