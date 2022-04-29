@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./RatingSelector.css";
 
-const RatingSelector = () => {
+const RatingSelector = ({ select }) => {
     const [selected, setSelected] = useState(10);
-    const handleChange = (e) => {};
+    const handleChange = (e) => {
+        setSelected(+e.currentTarget.value);
+        select(+e.currentTarget.value);
+    };
 
     return (
         <div>
@@ -36,18 +39,9 @@ const RatingSelector = () => {
                         onChange={handleChange}
                         checked={selected === 3}
                     />
-                    <label htmlFor="num2">2</label>
-                </li>{" "}
-                <li>
-                    <input
-                        type="radio"
-                        id="num1"
-                        value="1"
-                        onChange={handleChange}
-                        checked={selected === 1}
-                    />
                     <label htmlFor="num3">3</label>
                 </li>{" "}
+                
                 <li>
                     <input
                         type="radio"
