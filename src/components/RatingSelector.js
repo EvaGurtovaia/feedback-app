@@ -5,7 +5,7 @@ const RatingSelector = ({ select }) => {
     const [selected, setSelected] = useState(10);
     const handleChange = (e) => {
         setSelected(+e.currentTarget.value);
-        select(+e.currentTarget.value);
+        select(selected);
     };
 
     return (
@@ -41,7 +41,6 @@ const RatingSelector = ({ select }) => {
                     />
                     <label htmlFor="num3">3</label>
                 </li>{" "}
-                
                 <li>
                     <input
                         type="radio"
@@ -100,7 +99,7 @@ const RatingSelector = ({ select }) => {
                         onChange={handleChange}
                         checked={selected === 9}
                     />
-                    <label htmlFor="num1">9</label>
+                    <label htmlFor="num9">9</label>
                 </li>
                 <li>
                     <input
